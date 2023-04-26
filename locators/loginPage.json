@@ -1,0 +1,6 @@
+{
+  "loginClass": "//div[@class='login']",
+  "username": "#username",
+  "password": "#password",
+  "signInBtn": "#signin-button"
+}
