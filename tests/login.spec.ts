@@ -11,10 +11,10 @@ test.describe("login tests", () => {
   test.beforeEach(async ({ page }) => {
     loginPageDev = new LoginPage(page);
     homePageDev = new HomePage(page);
-    await loginPageDev.goto();
+    await loginPageDev.urlLoginPage();
   });
 
-  test("Successful login with valid credentials", async () => {
+  test("Successful Login with Valid Credentials", async () => {
     await loginPageDev.login(
       loginData.valid_username,
       loginData.valid_password

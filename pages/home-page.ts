@@ -12,7 +12,7 @@ export class HomePage {
     this.welcomeText = page.locator(locators.welcomeText);
   }
 
-  async urlPage() {
+  async urlHomePage() {
     await this.page.goto("/home");
   }
 }

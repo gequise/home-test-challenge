@@ -1,0 +1,16 @@
+{
+  "fullNameInput": "#fname",
+  "nameCardInput": "#cname",
+  "emailInput": "#email",
+  "creditCardNumberInput": "#ccnum",
+  "addressInput": "#adr",
+  "expirationMonthInput": "#expmonth",
+  "expirationYearInput": "#expyear",
+  "cvvInput": "#cvv",
+  "cityInput": "#city",
+  "stateInput": "#state",
+  "zipInput": "#zip",
+  "_shippingAddressCheckbox": "//input[@name='sameadr']",
+  "shippingAddressCheckbox": "Shipping address same as billing",
+  "continueCheckoutButton": "//button[@class='btn']"
+}

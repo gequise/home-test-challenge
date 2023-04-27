@@ -16,7 +16,7 @@ export class LoginPage {
     this.messageText = page.locator(locators.messageText);
   }
 
-  async goto() {
+  async urlLoginPage() {
     await this.page.goto("/login");
   }
 
