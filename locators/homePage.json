@@ -1,0 +1,4 @@
+{
+  "usernameField": "//p[@data-id='username']",
+  "welcomeText": "#welcome-message"
+}

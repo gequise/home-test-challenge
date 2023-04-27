@@ -6,22 +6,21 @@ export class LoginPage {
   readonly usernameInput: Locator;
   readonly passwordInput: Locator;
   readonly signInButton: Locator;
-  readonly loginTittle: Locator;
+  readonly messageText: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.usernameInput = page.locator(locators.username);
     this.passwordInput = page.locator(locators.password);
     this.signInButton = page.locator(locators.signInBtn);
-    this.loginTittle = page.locator(locators.loginClass);
+    this.messageText = page.locator(locators.messageText);
   }
 
   async goto() {
     await this.page.goto("/login");
   }
 
-  async login(username, password) {
-    await expect(this.loginTittle).toBeVisible();
+  async login(username: string, password: string) {
     await this.usernameInput.type(username);
     await this.passwordInput.type(password);
     await this.signInButton.click();

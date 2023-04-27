@@ -1,6 +1,6 @@
 {
-  "loginClass": "//div[@class='login']",
   "username": "#username",
   "password": "#password",
-  "signInBtn": "#signin-button"
+  "signInBtn": "#signin-button",
+  "messageText": "//h2[@id='message']"
 }
