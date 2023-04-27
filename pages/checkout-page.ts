@@ -30,8 +30,7 @@ export class CheckoutPage {
     this.cityInp = page.locator(locators.cityInput);
     this.stateInp = page.locator(locators.stateInput);
     this.zipInp = page.locator(locators.zipInput);
-    // this.shippingAddressChk = page.locator(locators._shippingAddressCheckbox);
-    this.shippingAddressChk = page.getByLabel(locators.shippingAddressCheckbox);
+    this.shippingAddressChk = page.locator(locators.shippingAddressCheckbox);
     this.continueCheckoutBtn = page.locator(locators.continueCheckoutButton);
   }
 
@@ -64,11 +63,14 @@ export class CheckoutPage {
     await this.zipInp.type(zip);
   }
 
-  async setShippingChecked(checked: boolean) {
+  async setShippingCheckedAddress(checked: boolean) {
     const isCurrentlyChecked = await this.shippingAddressChk.isChecked();
 
     if (checked !== isCurrentlyChecked) {
       await this.shippingAddressChk.click();
     }
+  }
+  async clickOnCheckoutBtn() {
+    await this.continueCheckoutBtn.click();
   }
 }

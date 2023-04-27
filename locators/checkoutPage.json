@@ -10,7 +10,6 @@
   "cityInput": "#city",
   "stateInput": "#state",
   "zipInput": "#zip",
-  "_shippingAddressCheckbox": "//input[@name='sameadr']",
-  "shippingAddressCheckbox": "Shipping address same as billing",
+  "shippingAddressCheckbox": "//input[@name='sameadr']",
   "continueCheckoutButton": "//button[@class='btn']"
 }

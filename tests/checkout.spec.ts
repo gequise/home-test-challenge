@@ -29,6 +29,7 @@ test.describe("Checkout tests", () => {
       city,
       checkoutData.zipCode
     );
-    await checkoutPageDev.setShippingChecked(true);
+    await checkoutPageDev.setShippingCheckedAddress(true);
+    await checkoutPageDev.clickOnCheckoutBtn();
   });
 });
