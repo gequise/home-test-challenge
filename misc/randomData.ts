@@ -39,7 +39,7 @@ export function getRandomFullNameAndEmail(): [string, string] {
     "Lautaro",
     "Julian",
     "Nicolas",
-    "Joaquín",
+    "Joaquin",
     "Paulo",
     "Lionel",
   ];

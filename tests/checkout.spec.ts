@@ -54,5 +54,6 @@ test.describe.parallel("Checkout tests", () => {
     await checkoutPageDev.setShippingCheckedAddress(false);
     await checkoutPageDev.clickOnCheckoutBtn();
     await checkoutPageDev.assertDialogMessage();
+    expect(checkoutPageDev.shippingAddressChk).toBeEnabled();
   });
 });

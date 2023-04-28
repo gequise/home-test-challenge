@@ -15,6 +15,7 @@ export class OrderPage {
   }
 
   async isOrderNumberNotEmpty() {
+    await this.orderNumberTxt.isEnabled();
     const orderNumberElement = await this.orderNumberTxt;
     const orderNumberText = await orderNumberElement?.textContent();
     const orderNumberMatch = orderNumberText?.match(/Order Number: (\d+)/);
