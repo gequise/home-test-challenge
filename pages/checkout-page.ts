@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page, expect } from "@playwright/test";
 import locators from "../locators/checkoutPage.json";
 
 export class CheckoutPage {
@@ -72,5 +72,12 @@ export class CheckoutPage {
   }
   async clickOnCheckoutBtn() {
     await this.continueCheckoutBtn.click();
+  }
+
+  async assertDialogMessage() {
+    this.page.on("dialog", async (dialog) => {
+      expect(dialog.message()).toEqual(locators.dialogMessageText);
+      await dialog.accept();
+    });
   }
 }

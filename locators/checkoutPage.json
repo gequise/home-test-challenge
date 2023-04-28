@@ -11,5 +11,6 @@
   "stateInput": "#state",
   "zipInput": "#zip",
   "shippingAddressCheckbox": "//input[@name='sameadr']",
-  "continueCheckoutButton": "//button[@class='btn']"
+  "continueCheckoutButton": "//button[@class='btn']",
+  "dialogMessageText": "Shipping address same as billing checkbox must be selected."
 }
