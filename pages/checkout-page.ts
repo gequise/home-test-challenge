@@ -16,6 +16,7 @@ export class CheckoutPage {
   readonly zipInp: Locator;
   readonly shippingAddressChk: Locator;
   readonly continueCheckoutBtn: Locator;
+  readonly productPricesVal: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -32,6 +33,7 @@ export class CheckoutPage {
     this.zipInp = page.locator(locators.zipInput);
     this.shippingAddressChk = page.locator(locators.shippingAddressCheckbox);
     this.continueCheckoutBtn = page.locator(locators.continueCheckoutButton);
+    this.productPricesVal = page.locator(locators.productPricesValue);
   }
 
   async urlCheckoutPage() {
@@ -79,5 +81,22 @@ export class CheckoutPage {
       expect(dialog.message()).toEqual(locators.dialogMessageText);
       await dialog.accept();
     });
+  }
+
+  async getValueLocator() {
+    const elements = await this.productPricesVal.all();
+    const values: string[] = [];
+
+    for (let i = 0; i < elements.length; i++) {
+      const value = await elements[i].textContent();
+      if (value !== null) {
+        values.push(value);
+      }
+    }
+    const cleanedValues = values.map((value) => {
+      return parseFloat(value.replace("$", ""));
+    });
+
+    return cleanedValues;
   }
 }

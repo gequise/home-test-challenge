@@ -6,6 +6,7 @@ import {
   getRandomCityAndState,
 } from "../misc/randomData";
 import { OrderPage } from "../pages/order-page";
+import { sumValues } from "../misc/misc";
 
 test.describe.parallel("Checkout tests", () => {
   let checkoutPageDev: CheckoutPage;
@@ -55,5 +56,12 @@ test.describe.parallel("Checkout tests", () => {
     await checkoutPageDev.clickOnCheckoutBtn();
     await checkoutPageDev.assertDialogMessage();
     expect(checkoutPageDev.shippingAddressChk).toBeEnabled();
+  });
+
+  test.only("Cart Total Test", async () => {
+    const pricesProducts = await checkoutPageDev.getValueLocator();
+    const sumOfProducts = sumValues(pricesProducts);
+    const totalProducts = pricesProducts[pricesProducts.length - 1];
+    expect(sumOfProducts).toEqual(totalProducts);
   });
 });
