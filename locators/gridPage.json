@@ -1,0 +1,7 @@
+{
+  "item": ".item",
+  "label": "label",
+  "itemName": "[data-test-id='item-name']",
+  "itemPrice": "#item-price",
+  "itemNumber": "[data-test-id='card-number']"
+}

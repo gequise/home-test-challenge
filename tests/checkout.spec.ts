@@ -20,7 +20,7 @@ test.describe.parallel("Checkout tests", () => {
     await checkoutPageDev.urlCheckoutPage();
   });
 
-  test("Checkout Form Order Success", async () => {
+  test("4. Checkout Form Order Success", async () => {
     await checkoutPageDev.fillInAllFields(
       fullName,
       email,
@@ -39,7 +39,7 @@ test.describe.parallel("Checkout tests", () => {
     expect(isNotEmpty).toBeTruthy;
   });
 
-  test("Checkout Form Alert", async () => {
+  test("5. Checkout Form Alert", async () => {
     await checkoutPageDev.fillInAllFields(
       fullName,
       email,
@@ -58,7 +58,7 @@ test.describe.parallel("Checkout tests", () => {
     expect(checkoutPageDev.shippingAddressChk).toBeEnabled();
   });
 
-  test.only("Cart Total Test", async () => {
+  test.only("6. Cart Total Test", async () => {
     const pricesProducts = await checkoutPageDev.getValueLocator();
     const sumOfProducts = sumValues(pricesProducts);
     const totalProducts = pricesProducts[pricesProducts.length - 1];

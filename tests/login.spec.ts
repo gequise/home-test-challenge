@@ -14,7 +14,7 @@ test.describe("login tests", () => {
     await loginPageDev.urlLoginPage();
   });
 
-  test("Successful Login with Valid Credentials", async () => {
+  test("1. Successful Login with Valid Credentials", async () => {
     await loginPageDev.login(
       loginData.valid_username,
       loginData.valid_password
@@ -25,7 +25,7 @@ test.describe("login tests", () => {
     );
   });
 
-  test("Verify the warning message when the username and password fields are invalid", async () => {
+  test("2. Verify the warning message when the username and password fields are invalid", async () => {
     await loginPageDev.login(
       loginData.invalid_username,
       loginData.invalid_password
@@ -35,7 +35,7 @@ test.describe("login tests", () => {
     );
   });
 
-  test("Verify the warning message when the username and password fields are left blank", async () => {
+  test("3. Verify the warning message when the username and password fields are left blank", async () => {
     await loginPageDev.login(loginData.blank_data, loginData.blank_data);
     await expect(loginPageDev.messageText).toHaveText(messages.fieldsEmpty);
   });
