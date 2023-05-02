@@ -15,4 +15,8 @@ export class HomePage {
   async urlHomePage() {
     await this.page.goto("/home");
   }
+
+  async getUserNameTxt() {
+    return await this.usernameField.textContent();
+  }
 }

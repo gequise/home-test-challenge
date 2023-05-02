@@ -2,5 +2,5 @@
   "username": "#username",
   "password": "#password",
   "signInBtn": "#signin-button",
-  "messageText": "//h2[@id='message']"
+  "messageText": "#message"
 }
