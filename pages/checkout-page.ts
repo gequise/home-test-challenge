@@ -1,4 +1,4 @@
-import { Locator, Page, expect } from "@playwright/test";
+import { Locator, Page, expect, test } from "@playwright/test";
 import locators from "../locators/checkoutPage.json";
 
 export class CheckoutPage {
@@ -52,17 +52,39 @@ export class CheckoutPage {
     city: string,
     zip: string
   ) {
-    await this.fullNameInp.type(name);
-    await this.nameCardInp.type(name);
-    await this.emailInp.type(email);
-    await this.creditCardNumberInp.type(card);
-    await this.addressInp.type(address);
-    await this.expirationMonthInp.selectOption(month);
-    await this.expirationYearInp.type(year);
-    await this.cvvInp.type(cvv);
-    await this.stateInp.type(state);
-    await this.cityInp.type(city);
-    await this.zipInp.type(zip);
+    await test.step(`As a user, fill in the Full Name field`, async () => {
+      await this.fullNameInp.type(name);
+    });
+    await test.step(`As a user, fill in the Name on Card field`, async () => {
+      await this.nameCardInp.type(name);
+    });
+    await test.step(`As a user, fill in the Email field`, async () => {
+      await this.emailInp.type(email);
+    });
+    await test.step(`As a user, fill in the Credit Card Numberfield`, async () => {
+      await this.creditCardNumberInp.type(card);
+    });
+    await test.step(`As a user, fill in the Address field`, async () => {
+      await this.addressInp.type(address);
+    });
+    await test.step(`As a user, fill in the Expiration Month field`, async () => {
+      await this.expirationMonthInp.selectOption(month);
+    });
+    await test.step(`As a user, fill in the Expiration Year field`, async () => {
+      await this.expirationYearInp.type(year);
+    });
+    await test.step(`As a user, fill in the CVV field`, async () => {
+      await this.cvvInp.type(cvv);
+    });
+    await test.step(`As a user, fill in the State field`, async () => {
+      await this.stateInp.type(state);
+    });
+    await test.step(`As a user, fill in the City field`, async () => {
+      await this.cityInp.type(city);
+    });
+    await test.step(`As a user, fill in the Zip field`, async () => {
+      await this.zipInp.type(zip);
+    });
   }
 
   async setShippingCheckedAddress(checked: boolean) {
