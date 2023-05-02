@@ -3,5 +3,9 @@
   "label": "label",
   "itemName": "[data-test-id='item-name']",
   "itemPrice": "#item-price",
-  "itemNumber": "[data-test-id='card-number']"
+  "itemNumber": "[data-test-id='card-number']",
+  "itemImage": "//img",
+  "menuDiv": "#menu div",
+  "addOrderButton": "[data-test-id='add-to-order']",
+  "srcAttribute": "src"
 }

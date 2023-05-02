@@ -1,0 +1,5 @@
+{
+  "searchInput": "[name=searchWord]",
+  "resultText": "//p[@id='result']",
+  "submitButton": "//button[@type='submit']"
+}

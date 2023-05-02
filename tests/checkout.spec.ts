@@ -8,7 +8,7 @@ import {
 import { OrderPage } from "../pages/order-page";
 import { sumValues } from "../misc/misc";
 
-test.describe.parallel("Checkout tests", () => {
+test.describe("Checkout tests", () => {
   let checkoutPageDev: CheckoutPage;
   let orderPageDev: OrderPage;
   const [fullName, email] = getRandomFullNameAndEmail();
@@ -58,7 +58,7 @@ test.describe.parallel("Checkout tests", () => {
     expect(checkoutPageDev.shippingAddressChk).toBeEnabled();
   });
 
-  test.only("6. Cart Total Test", async () => {
+  test("6. Cart Total Test", async () => {
     const pricesProducts = await checkoutPageDev.getValueLocator();
     const sumOfProducts = sumValues(pricesProducts);
     const totalProducts = pricesProducts[pricesProducts.length - 1];

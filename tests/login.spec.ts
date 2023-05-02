@@ -4,7 +4,7 @@ import loginData from "../resources/loginCredentials.json";
 import messages from "../resources/loginErrorMessages.json";
 import { HomePage } from "../pages/home-page";
 
-test.describe("login tests", () => {
+test.describe("Login tests", () => {
   let loginPageDev: LoginPage;
   let homePageDev: HomePage;
 

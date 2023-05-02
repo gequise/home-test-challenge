@@ -64,3 +64,22 @@ export function getRandomFullNameAndEmail(): [string, string] {
 
   return [fullName, email];
 }
+
+const words: string[] = [
+  "automation",
+  "test",
+  "computerization",
+  "robotization",
+  "technology",
+  "script",
+];
+
+function getRandomIndex(max: number): number {
+  return Math.floor(Math.random() * max);
+}
+
+export function getRandomWord(): string {
+  const maxIndex = words.length;
+  const randomIndex = getRandomIndex(maxIndex);
+  return words[randomIndex];
+}
